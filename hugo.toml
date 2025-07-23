@@ -2,5 +2,4 @@ baseURL = "https://teal-profiterole-6b63ec.netlify.app/" # Update to your Netlif
 languageCode = "en-us"
 title = "Village Parish"
 theme = "ananke"
-[params]
-  site_logo = "/images/logo.png"
+
