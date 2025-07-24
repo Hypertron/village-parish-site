@@ -1,4 +1,4 @@
-baseURL = "https://teal-profiterole-6b63ec.netlify.app/" # Update to your Netlify URL or custom domain
+baseURL = "https://kirklingtonhowgrave.org/" # Update to your Netlify URL or custom domain
 languageCode = "en-us"
 title = "Kirklington & Sutton Howgrave"
 theme = "ananke"
