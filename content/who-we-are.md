@@ -5,7 +5,10 @@ menu:
   main:
     weight: 1
 ---
-The Village Parish Council serves our community with dedication. Established in 1900, we work to maintain our village’s charm and support residents. Meet our team:
-- Jane Doe: Chair
-- John Smith: Treasurer
-- Mary Johnson: Secretary
+The Village Parish Council serves our community with dedication. We work to maintain our village’s charm and support residents. Meet our team:
+- Jackie Wilson: Clerk
+- David Ball: Parish Councillor
+- Huw Dyer: Chair
+- Jontje Kimberley: Parish Councillor
+- Richard Potter: Parish Councillor
+- Richard Wilson: Parish Councillor

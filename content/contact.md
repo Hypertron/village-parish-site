@@ -5,8 +5,7 @@ menu:
   main:
     weight: 3
 ---
-Reach out to the Parish Council:
-- Email: contact@villageparish.org
-- Phone: (123) 456-7890
-- Address: 123 Village Lane, Village Parish
+Reach out to Jackie Wilson, the clerk of the Parish Council:
+- Email: ksh.villageparish@gmail.com
+- Phone: 07919 108036
 
