@@ -2,6 +2,4 @@ baseURL = "https://kirklingtonhowgrave.org/" # Update to your Netlify URL or cus
 languageCode = "en-us"
 title = "Kirklington & Sutton Howgrave"
 theme = "ananke"
-[services]
-  [services.googleAnalytics]
-    googleAnalytics = "G-H88K87FTSQ"
+googleAnalytics = "G-H88K87FTSQ"
