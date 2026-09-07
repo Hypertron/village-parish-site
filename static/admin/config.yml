@@ -14,6 +14,11 @@ backend:
 
 site_url: https://kirklingtonhowgrave.org
 publish_mode: simple
+
+# Decap requires a top-level media_folder/public_folder even though every
+# field below defines its own — this pair is just an unused fallback.
+media_folder: "static/uploads"
+public_folder: "/uploads"
 # Set publish_mode to "editorial_workflow" instead if you'd like drafts to
 # go through a review/approve step (creates a draft PR) before they publish —
 # handy since two people will be adding posts.
