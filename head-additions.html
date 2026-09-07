@@ -1,0 +1,18 @@
+<!-- Netlify Identity widget, loaded site-wide.
+     This is required so that invite / password-recovery / confirmation
+     links — which Netlify sends to the site's homepage with a token in
+     the URL hash, e.g. /#invite_token=... — are actually picked up and
+     turned into a "set your password" screen. Without this, the token
+     just sits inertly in the URL and nothing happens. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
