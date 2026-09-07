@@ -1,0 +1,77 @@
+backend:
+  name: git-gateway
+  branch: main
+  # This requires Netlify Identity + Git Gateway to be turned on for this site
+  # (Netlify dashboard → Site configuration → Identity). Invite the clerk's
+  # email there and she'll get a "set your password" link — no GitHub
+  # account needed.
+  #
+  # Alternative, if you'd rather not depend on Netlify Identity: swap the
+  # block above for:
+  #   name: github
+  #   repo: Hypertron/village-parish-site
+  # ...and set up a small OAuth provider (self-hostable) instead.
+
+site_url: https://kirklingtonhowgrave.org
+publish_mode: simple
+# Set publish_mode to "editorial_workflow" instead if you'd like drafts to
+# go through a review/approve step (creates a draft PR) before they publish —
+# handy since two people will be adding posts.
+
+collections:
+  - name: "events"
+    label: "Council Documents"
+    label_singular: "Document"
+    description: "Minutes, agendas, and accounts shown on the What's On page"
+    folder: "content/events"
+    create: true
+    slug: "{{fields.doc_type}}-{{fields.eventDate}}"
+    identifier_field: title
+    summary: "{{doc_type}} — {{eventDate}}"
+    sortable_fields: ["eventDate", "doc_type", "title"]
+
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: 'e.g. "Minutes from meeting on 17 June 2026"'
+
+      - label: "Published Date"
+        name: "date"
+        widget: "datetime"
+        default: "{{now}}"
+        hint: "When this should appear on the site — usually just leave as today"
+
+      - label: "Meeting / Document Date"
+        name: "eventDate"
+        widget: "date"
+        hint: "The actual date of the meeting, or the accounts period end date"
+
+      - label: "Document Type"
+        name: "doc_type"
+        widget: "select"
+        options:
+          - { label: "Minutes", value: "minutes" }
+          - { label: "Agenda", value: "agenda" }
+          - { label: "Accounts", value: "accounts" }
+
+      - label: "Document (PDF)"
+        name: "document"
+        widget: "file"
+        media_folder: "/static/pdfs"
+        public_folder: "/pdfs"
+        hint: "Upload the PDF here — the link shown on the site is generated from this automatically, so there's nothing else to type."
+
+      - label: "Featured Image"
+        name: "featured_image"
+        widget: "image"
+        media_folder: "/static/images"
+        public_folder: "/images"
+        required: false
+        hint: "Optional — shown as the thumbnail on the What's On page. Leave blank to reuse the default."
+
+      - label: "Notes"
+        name: "body"
+        widget: "markdown"
+        required: false
+        hint: "Optional extra text for this entry. You don't need to add the document link here — it's added automatically from the PDF above."
